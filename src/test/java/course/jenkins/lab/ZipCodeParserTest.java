@@ -76,6 +76,6 @@ public class ZipCodeParserTest {
 	public void testZipCodeParserShouldSetNullValuesWhenPassesNullValue() throws Exception {
 		String[] zipParts = ZipCodeParser.parseZipCode(null);
 		assertNull(zipParts[0]);
-		assertNull(zipParts[1]);
+		assertNull(zipParts[1])
 	}
 }
