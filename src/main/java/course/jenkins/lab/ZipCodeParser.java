@@ -23,7 +23,7 @@ public class ZipCodeParser {
 	private String unusedString;
 
 	public static String[] parseZipCode(String zipInput) {
-		String zip5 = null
+		String zip5 = null;
 		String zip4 = null;
 		String unUsedData;	
 		
