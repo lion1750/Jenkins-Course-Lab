@@ -37,35 +37,36 @@ public class ZipCodeParser {
 		badString.toString();
 	     
 		
-		
-		Matcher m = P.matcher(zipInput);
-		if (m.matches()) {
-			if (m.group(1) != null) {
-				/* simple 5 digit zip */
-				zip5 = m.group(1);
-				zip4 = null;
-			} else if (m.group(2) != null && m.group(3) != null) {
-				/* 5+4 with no separator */
-				zip5 = m.group(2);
-				zip4 = m.group(3);
-			} else if (m.group(4) != null && m.group(5) != null) {
-				/* 5+4 with separator */
-				zip5 = m.group(4);
-				zip4 = m.group(5);
-			} else if(m.group(6) != null && m.group(7) != null){
-				/* 5+4 with separator */
-				zip5 = m.group(6);
-				logger.debug("Found extra character:" + m.group(7));
-				zip4 = null;
-			} else if(m.group(8) != null && m.group(9) != null && m.group(10) != null){
-				/* 5+4 with separator */
-				zip5 = m.group(8);
-				logger.debug("Found extra character:" + m.group(9));
-				zip4 = m.group(10);
+		if(zipInput != null){
+			Matcher m = P.matcher(zipInput);
+			if (m.matches()) {
+				if (m.group(1) != null) {
+					/* simple 5 digit zip */
+					zip5 = m.group(1);
+					zip4 = null;
+				} else if (m.group(2) != null && m.group(3) != null) {
+					/* 5+4 with no separator */
+					zip5 = m.group(2);
+					zip4 = m.group(3);
+				} else if (m.group(4) != null && m.group(5) != null) {
+					/* 5+4 with separator */
+					zip5 = m.group(4);
+					zip4 = m.group(5);
+				} else if(m.group(6) != null && m.group(7) != null){
+					/* 5+4 with separator */
+					zip5 = m.group(6);
+					logger.debug("Found extra character:" + m.group(7));
+					zip4 = null;
+				} else if(m.group(8) != null && m.group(9) != null && m.group(10) != null){
+					/* 5+4 with separator */
+					zip5 = m.group(8);
+					logger.debug("Found extra character:" + m.group(9));
+					zip4 = m.group(10);
+				}
+			} else {
+				logger.error("invalid zip code ({}); can not be parsed", zipInput);
 			}
-		} else {
-			logger.error("invalid zip code ({}); can not be parsed", zipInput);
-		}		
+		}
 		
 		return new String[] { zip5, zip4 };
 	}
