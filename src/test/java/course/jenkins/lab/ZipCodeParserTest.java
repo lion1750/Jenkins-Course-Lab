@@ -9,7 +9,7 @@ import course.jenkins.lab.ZipCodeParser;
 
 public class ZipCodeParserTest {
 
-	@Ignore	
+	@Test
 	public void testZipWith5() {
 		String zipWith5 = "12345";
 
@@ -18,7 +18,7 @@ public class ZipCodeParserTest {
 		assertNull(zipParts[1]);
 	}
 
-	@Ignore
+	@Test
 	public void testZipWith9() {
 		String zipWith9 = "123456789";
 
@@ -27,7 +27,7 @@ public class ZipCodeParserTest {
 		assertEquals(zipWith9.substring(5, 9), zipParts[1]);
 	}
 
-	@Ignore
+	@Test
 	public void testZipWithDash() {
 		String zipWithDash = "12345-6789";
 
@@ -36,7 +36,7 @@ public class ZipCodeParserTest {
 		assertEquals(zipWithDash.substring(6, 10), zipParts[1]);
 	}
 
-	@Ignore
+	@Test
 	public void testZipWithSpace() {
 		String zipWithSpace = "12345 6789";
 
@@ -45,7 +45,7 @@ public class ZipCodeParserTest {
 		assertEquals(zipWithSpace.substring(6, 10), zipParts[1]);
 	}
 
-	@Ignore
+	@Test
 	public void testZipInvalid() {
 		String zipInvalid = "1234";
 
@@ -54,7 +54,7 @@ public class ZipCodeParserTest {
 		assertNull(zipParts[1]);
 	}
 	
-	@Ignore
+	@Test
 	public void testZip5WithSpecialCharacterAtEnd() {
 		String zipWithSpecialCharacterAtEnd = "12345A";
 
@@ -63,7 +63,7 @@ public class ZipCodeParserTest {
 		assertEquals(null, zipParts[1]);
 	}
 	
-	@Ignore
+	@Test
 	public void testZip9WithSpecialCharacterInBetween() {
 		String zipWithSpecialCharacterInBetween = "12345A6789";
 
