@@ -38,6 +38,7 @@ public class ZipCodeParser {
 	     
 		
 		if(zipInput != null){
+			
 			Matcher m = P.matcher(zipInput);
 			if (m.matches()) {
 				if (m.group(1) != null) {
