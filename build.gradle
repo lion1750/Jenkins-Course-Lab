@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
+apply plugin: 'checkstyle'
 
 group = 'Jenkins-Course-Lab'
 version = '1.0'
@@ -30,6 +31,11 @@ pmd {
 	ignoreFailures = true
 	ruleSets = ["java-basic", "java-design", "java-braces"]
 }
+
+checkstyle {
+	ignoreFailures = true
+}
+
 repositories {
     mavenCentral()
 }
