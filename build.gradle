@@ -30,7 +30,6 @@ pmd {
 	ignoreFailures = true
 	ruleSets = ["java-basic", "java-design", java-braces"]
 }
-
 repositories {
     mavenCentral()
 }
