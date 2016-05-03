@@ -1,5 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'findbugs'
+apply plugin: 'pmd'
 
 group = 'Jenkins-Course-Lab'
 version = '1.0'
@@ -23,6 +24,11 @@ findbugs {
 	ignoreFailures = true
 	effort = "max"
 	reportLevel = "low"
+}
+
+pmd {
+	ignoreFailures = true
+	rulesets = ["java-basic", "java-design", java-braces"]
 }
 
 repositories {
