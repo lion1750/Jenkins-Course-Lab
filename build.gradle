@@ -40,8 +40,9 @@ checkstyle {
 }
 
 cobertura {
-	coverageFormats = ['html', 'xml']
+	coverateFormats = ['html', 'xml']
 }
+
 
 repositories {
     mavenCentral()
